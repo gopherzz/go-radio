@@ -9,7 +9,7 @@ type not struct {
 }
 
 func Not() *not {
-	return &and{}
+	return &not{}
 }
 
 func (n not) Eval(signals []signal.Signal) []signal.Signal {
