@@ -1,4 +1,4 @@
-package lib
+package elements
 
 import (
 	"go-radio/pkg/radio/scheme"
@@ -6,9 +6,9 @@ import (
 )
 
 type board struct {
-	inner []scheme.Scheme
+	inner      []scheme.Scheme
 	pos, count int
-	outputs []signal.Signal
+	outputs    []signal.Signal
 }
 
 func (b board) Eval(signals []signal.Signal) []signal.Signal {
@@ -31,7 +31,7 @@ func (b board) OutputLength() int {
 	return b.inner[b.count-1].OutputLength()
 }
 
-func NewBoard(inner ...scheme.Scheme) board {
+func Board(inner ...scheme.Scheme) board {
 	return board{
 		inner: inner,
 		count: len(inner),

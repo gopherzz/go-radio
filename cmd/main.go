@@ -2,20 +2,25 @@ package main
 
 import (
 	"go-radio/pkg/radio"
+	elements "go-radio/pkg/radio/elements"
 	"go-radio/pkg/radio/inputs"
-	lib2 "go-radio/pkg/radio/lib"
 )
 
 func main() {
-	simpleScheme := lib2.NewBoard(
-		lib2.NewUnion(
-			lib2.NewEnd(),
-			lib2.NewEnd(),
+	simpleScheme := elements.Board(
+		elements.Pair(
+			elements.Board(
+				elements.Union(
+					elements.Or(),
+					elements.End(),
+				),
+				elements.Or(),
+			),
+			elements.Xor(),
 		),
-		lib2.NewEnd(),
 	)
 	r := radio.New(simpleScheme)
-	r.Start(inputs.SimpleInputs(0, 1, 1, 1))
+	r.Start(inputs.SimpleInputs(0, 1, 0, 1, 0))
 
 	r.PrintResult()
 }

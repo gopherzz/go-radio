@@ -1,4 +1,4 @@
-package lib
+package elements
 
 import (
 	"go-radio/internal/utils"
@@ -7,7 +7,7 @@ import (
 )
 
 type union struct {
-	inner []scheme.Scheme
+	inner   []scheme.Scheme
 	outputs []signal.Signal
 }
 
@@ -41,6 +41,6 @@ func (u union) OutputLength() int {
 	return length
 }
 
-func NewUnion(inner ...scheme.Scheme) *union {
+func Union(inner ...scheme.Scheme) *union {
 	return &union{inner: inner}
 }

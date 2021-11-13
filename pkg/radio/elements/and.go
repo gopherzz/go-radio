@@ -1,4 +1,4 @@
-package lib
+package elements
 
 import (
 	"go-radio/pkg/radio/signal"
@@ -7,7 +7,7 @@ import (
 type end struct {
 }
 
-func NewEnd() *end {
+func End() *end {
 	return &end{}
 }
 
@@ -24,6 +24,3 @@ func (e end) InputsLength() int {
 func (e end) OutputLength() int {
 	return 1
 }
-
-
-
