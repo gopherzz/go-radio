@@ -5,6 +5,13 @@ import (
 	"go-radio/pkg/radio/signal"
 )
 
+/// Pair scheme for pass first input signals to first scheme and
+/// first scheme outputs + rest input signals to second scheme
+/// 					  | [sig1, sig2] => [scheme1] -> [out]
+///                       |                                |
+/// [sig1, sig2, sig3] -> |   +----------------------------+
+///                       |   |
+///                       | [out, sig3]  => [scheme2]
 type pair struct {
 	inner   []scheme.Scheme
 	outputs []signal.Signal

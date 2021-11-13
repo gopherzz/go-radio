@@ -4,6 +4,7 @@ import (
 	"go-radio/pkg/radio/signal"
 )
 
+// Xor Logical Operation scheme
 type xor struct {
 }
 

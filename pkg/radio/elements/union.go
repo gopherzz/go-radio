@@ -6,6 +6,10 @@ import (
 	"go-radio/pkg/radio/signal"
 )
 
+/// Union scheme for distribute signals between few schemes
+/// 						   | [sig1, sig2] => [or]->  | -> orSig
+/// [sig1, sig2, sig3, sig4]-> |                         |
+/// 						   | [sig3, sig4] => [and]-> | -> andSig
 type union struct {
 	inner   []scheme.Scheme
 	outputs []signal.Signal

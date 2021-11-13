@@ -5,6 +5,8 @@ import (
 	"go-radio/pkg/radio/signal"
 )
 
+/// Board scheme for simple linear schemes run.
+/// [signal1, signal2]=>[or]->[not]
 type board struct {
 	inner      []scheme.Scheme
 	pos, count int

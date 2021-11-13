@@ -4,6 +4,7 @@ import (
 	"go-radio/pkg/radio/signal"
 )
 
+/// Or Logical Operation scheme
 type or struct {
 }
 
